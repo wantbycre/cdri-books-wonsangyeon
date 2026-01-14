@@ -20,3 +20,6 @@ export const searchResultAtom = atom<SearchState>(initialState);
 
 // 검색 키워드 저장 atom
 export const searchKeywordAtom = atomWithStorage<string[]>("history", []);
+
+// 장바구니 데이터 저장 atom
+export const cartContentAtom = atomWithStorage<Book[]>("cart", []);

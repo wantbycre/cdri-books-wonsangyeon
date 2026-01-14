@@ -20,7 +20,9 @@ const Head = () => {
                     <li>
                         <Link
                             href="/"
-                            className={pathname === "/" ? styles.active : ""}
+                            className={
+                                pathname === "/book" ? styles.active : ""
+                            }
                         >
                             도서 검색
                         </Link>

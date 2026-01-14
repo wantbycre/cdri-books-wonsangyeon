@@ -144,16 +144,16 @@ const BooksSearch = () => {
 
     return (
         <search>
-            <h2 className="text-xl mb-5">도서검색</h2>
+            <h2 className="text-xl mb-5 font-[700]">도서검색</h2>
             <div className="relative flex items-center mb-4">
                 <form onSubmit={handleSubmit}>
+                    <button type="submit" className="hidden" />
                     <input
                         type="text"
-                        className={`bg-light-gray w-[480px] ps-12 leading-12 ${
-                            wordLayer
+                        className={`bg-light-gray w-[480px] ps-12 h-12 ${wordLayer
                                 ? `rounded-tl-3xl rounded-tr-3xl`
                                 : `rounded-3xl`
-                        }`}
+                            }`}
                         placeholder="검색어를 입력하세요."
                         ref={inputRef}
                         value={word}
