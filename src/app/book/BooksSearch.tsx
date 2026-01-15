@@ -12,6 +12,7 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select";
+import { Spinner } from "@/components/ui/spinner";
 import { useAtom } from "jotai";
 import { searchResultAtom, searchKeywordAtom } from "@/store/bookAtom";
 
@@ -24,6 +25,7 @@ const BooksSearch = () => {
 
     const [modal, setModal] = useState(false); // 모달
     const [modalType, setModalType] = useState<SearchType>("title"); // 모달 타입
+    const [isMounted, setIsMounted] = useState(false); // ssr 하이디렉션 충돌 방지
     const [modalWord, setModalWord] = useState(""); // 모달 타이핑
 
     const [searchStatus, setSearchStatus] = useAtom(searchResultAtom);
@@ -34,6 +36,11 @@ const BooksSearch = () => {
         query: searchWord,
         target: type,
     });
+
+    // ssr 하이디렉션 충돌 방지
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
 
     // jotai atom 저장
     useEffect(() => {
@@ -141,6 +148,10 @@ const BooksSearch = () => {
     };
 
     // console.log(data?.documents);
+
+    if (!isMounted) {
+        return <Spinner />;
+    }
 
     return (
         <search>
