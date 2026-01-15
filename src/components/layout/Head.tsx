@@ -11,12 +11,12 @@ const Head = () => {
     const pathname = usePathname();
 
     return (
-        <header className="flex justify-between items-center mb-15 mt-3">
-            <h1 className="text-[24px] font-bold">
+        <header className="flex justify-between items-center mb-10 md:mb-15 mt-3">
+            <h1 className="text-[18px] md:text-[24px] font-bold">
                 <Link href="/">CERTICOS BOOKS</Link>
             </h1>
             <nav>
-                <ul className="flex gap-10">
+                <ul className="flex gap-5 md:gap-10 text-[14px]">
                     <li>
                         <Link
                             href="/"

@@ -150,10 +150,11 @@ const BooksSearch = () => {
                     <button type="submit" className="hidden" />
                     <input
                         type="text"
-                        className={`bg-light-gray w-[480px] ps-12 h-12 ${wordLayer
+                        className={`bg-light-gray w-[220px] md:w-[480px] ps-12 h-12 ${
+                            wordLayer
                                 ? `rounded-tl-3xl rounded-tr-3xl`
                                 : `rounded-3xl`
-                            }`}
+                        }`}
                         placeholder="검색어를 입력하세요."
                         ref={inputRef}
                         value={word}
@@ -245,12 +246,12 @@ const BooksSearch = () => {
 
                 {/* 검색기록 */}
                 <div className={wordLayer ? "block" : "hidden"}>
-                    <div className="absolute left-0 top-[48px] z-800 bg-light-gray rounded-b-3xl w-[480px] search-layer-container">
+                    <div className="absolute left-0 top-[48px] z-800 bg-light-gray rounded-b-3xl w-[220px] md:w-[480px] search-layer-container">
                         <ul className="pb-2">
                             {wordStorage.map((word) => (
                                 <li
                                     key={word}
-                                    className="ps-12 pe-5 py-2 flex justify-between text-subtitle hover:bg-gray"
+                                    className="ps-5 md:ps-12 pe-5 py-2 flex justify-between text-subtitle hover:bg-gray"
                                 >
                                     <button
                                         type="button"

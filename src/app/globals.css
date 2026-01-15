@@ -10,6 +10,9 @@
     --color-black: #222222;
     --color-secondary: #6d7582;
     --color-subtitle: #8d94a0;
+
+    /* 기존 브레이크포인트 값 수정 */
+    --breakpoint-md: 960px;
 }
 
 :root {

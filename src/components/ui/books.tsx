@@ -47,8 +47,8 @@ const Books = ({ contents }: Props) => {
                 return (
                     <div key={isbn} className="flex flex-col">
                         {!isOpen && (
-                            <section className="flex justify-between items-center border-b border-gray py-3 ps-7 pe-5">
-                                <div className="flex flex-1 pe-5">
+                            <section className="flex flex-col md:flex-row justify-between items-center border-b border-gray py-3 ps-3 md:ps-7 pe-5">
+                                <div className="flex w-full md:w-auto md:flex-1 pe-5">
                                     <div className="w-[48px] h-[68px] bg-gray me-8 relative overflow-hidden shrink-0">
                                         <Image
                                             src={book.thumbnail}
@@ -59,7 +59,7 @@ const Books = ({ contents }: Props) => {
                                         />
                                     </div>
                                     <div className="flex items-center">
-                                        <p className="text-lg font-[600]  max-w-[300px]">
+                                        <p className="md:text-lg font-[600]  max-w-[300px]">
                                             {/* truncate */}
                                             {book.title}
                                         </p>
@@ -68,7 +68,7 @@ const Books = ({ contents }: Props) => {
                                         </span>
                                     </div>
                                 </div>
-                                <div className="flex items-center w-[350px] justify-end">
+                                <div className="flex items-center w-[360px] justify-end">
                                     <div className="text-lg font-[600] whitespace-nowrap">
                                         {book.sale_price > 0
                                             ? `${formatPrice(
@@ -105,8 +105,8 @@ const Books = ({ contents }: Props) => {
 
                         {/* 상세 섹션 (isOpen이 true일 때만 block) */}
                         <div className={isOpen ? "block" : "hidden"}>
-                            <section className="flex justify-between border-b border-gray py-8 ps-7 pe-5 bg-[#fafafa]">
-                                <div className="flex flex-1">
+                            <section className="flex flex-col md:flex-row justify-between border-b border-gray py-8 ps-7 pe-5 bg-[#fafafa]">
+                                <div className="flex flex-col md:flex-row flex-1">
                                     <div className="relative w-[210px] h-[280px] bg-gray me-8 shrink-0 overflow-hidden shadow-md">
                                         <Image
                                             src={book.thumbnail}
@@ -134,7 +134,7 @@ const Books = ({ contents }: Props) => {
                                         </button>
                                     </div>
                                     <div className="flex-1">
-                                        <div className="flex items-center mt-2">
+                                        <div className="flex items-center mt-5 md:mt-2">
                                             <p className="text-22 font-[700]">
                                                 {book.title}
                                             </p>
@@ -146,15 +146,15 @@ const Books = ({ contents }: Props) => {
                                             <p className="font-[600] mb-3 text-16">
                                                 책 소개
                                             </p>
-                                            <div className="text-[10px] pe-8 w-110">
+                                            <div className="text-[10px] pe-8 md:w-110">
                                                 {book.contents}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="flex w-[350px] flex-col justify-between items-stretch text-end">
-                                    <div>
+                                <div className="flex md:w-[360px] flex-col justify-between items-stretch text-end mt-5 md:mt-0">
+                                    <div className="mb-5 md:mb-0">
                                         <button
                                             type="button"
                                             className="py-3 ps-6 pe-5 text-secondary bg-light-gray rounded-md cursor-pointer inline-flex items-center"
