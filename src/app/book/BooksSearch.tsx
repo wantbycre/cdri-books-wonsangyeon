@@ -258,7 +258,7 @@ const BooksSearch = () => {
                 {/* 검색기록 */}
                 <div className={wordLayer ? "block" : "hidden"}>
                     <div className="absolute left-0 top-[48px] z-800 bg-light-gray rounded-b-3xl w-[220px] md:w-[480px] search-layer-container">
-                        <ul className="pb-2">
+                        <ul className="pb-4">
                             {wordStorage.map((word) => (
                                 <li
                                     key={word}
